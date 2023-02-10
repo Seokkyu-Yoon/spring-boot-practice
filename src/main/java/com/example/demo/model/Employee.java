@@ -1,4 +1,4 @@
-package com.example.demo.payroll;
+package com.example.demo.model;
 
 import java.util.Objects;
 
@@ -7,15 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-class Employee {
-  private @Id @GeneratedValue Long id;
+public class Employee {
+  @Id
+  @GeneratedValue
+  private Long id;
   private String name;
   private String role;
 
-  Employee() {
-  }
+  public Employee() {}
 
-  Employee(String name, String role) {
+  public Employee(String name, String role) {
     this.name = name;
     this.role = role;
   }
@@ -64,9 +65,9 @@ class Employee {
     if (this == o) return true;
     if (!(o instanceof Employee)) return false;
     Employee employee = (Employee) o;
-    return Objects.equals(this.id, employee.id) &&
-    Objects.equals(this.name, employee.name) &&
-    Objects.equals(this.role, employee.role);
+    return Objects.equals(this.id, employee.getId()) &&
+    Objects.equals(this.name, employee.getName()) &&
+    Objects.equals(this.role, employee.getRole());
   }
 
   @Override
