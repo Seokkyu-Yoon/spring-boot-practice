@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class RenderCountroller {
-  @RequestMapping("/") 
+  @RequestMapping("/")
   String main () {
     return "index.html";
   }
